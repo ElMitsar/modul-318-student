@@ -54,6 +54,7 @@ namespace SwissTransport
             if (responseStream != null)
             {
                 var readToEnd = new StreamReader(responseStream).ReadToEnd();
+                
                 var connections =
                     JsonConvert.DeserializeObject<Connections>(readToEnd);
                 return connections;

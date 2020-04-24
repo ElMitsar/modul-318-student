@@ -72,22 +72,22 @@ namespace FahrplanAPP
                     MessageBox.Show("Eingabe unvollständig");
                 }
 
-                else 
+                else
                 {
                     RoutenSuchen();
                 }
             };
         }
 
-        public void RoutenSuchen() 
+        public void RoutenSuchen()
         {
+            RoutenAnzeige.Items.Clear(); //Löscht vorgängige Eingaben
             Connections Route = transport.GetConnections(EingabeAbfahrtsstation.Text, EingabeZielstation.Text);
             foreach (Connection x in Route.ConnectionList)
             {
 
-                RoutenAnzeige.Items.Add(x.From);
-                RoutenAnzeige.Items.Add(x.To);
-                //EingabeZielstation.Items.Add(x.Name);
+                RoutenAnzeige.Items.Add(x.From.Station.Name);
+                RoutenAnzeige.Items.Add(x.To.Station.Name);
             }
 
         }
@@ -100,6 +100,17 @@ namespace FahrplanAPP
         private void EingabeZielstation_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Stations Zielstation = transport.GetStations(EingabeZielstation.Text);
+        }
+
+        private void ButtonAbfahrtsPlan_Click(object sender, EventArgs e)
+        {
+            RoutenAnzeige.Items.Clear(); //Löscht vorgängige Eingaben
+            var AbfahrtsstationID = transport.GetStations(EingabeAbfahrtsstation.Text).StationList[0].Id;
+            StationBoardRoot Abfahrtsplan = transport.GetStationBoard(EingabeAbfahrtsstation.Text, AbfahrtsstationID);
+            foreach (StationBoard x in Abfahrtsplan.Entries)
+            {
+                RoutenAnzeige.Items.Add(x.Stop.Departure + "\t" + x.To);
+            }
         }
     }
 }

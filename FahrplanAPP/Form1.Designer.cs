@@ -34,14 +34,15 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ButtonAbfahrtsPlan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // EingabeAbfahrtsstation
             // 
             this.EingabeAbfahrtsstation.FormattingEnabled = true;
-            this.EingabeAbfahrtsstation.Location = new System.Drawing.Point(437, 86);
+            this.EingabeAbfahrtsstation.Location = new System.Drawing.Point(442, 86);
             this.EingabeAbfahrtsstation.Name = "EingabeAbfahrtsstation";
-            this.EingabeAbfahrtsstation.Size = new System.Drawing.Size(121, 33);
+            this.EingabeAbfahrtsstation.Size = new System.Drawing.Size(140, 33);
             this.EingabeAbfahrtsstation.TabIndex = 1;
             this.EingabeAbfahrtsstation.SelectedIndexChanged += new System.EventHandler(this.EingabeAbfahrtsstation_SelectedIndexChanged);
             this.EingabeAbfahrtsstation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EingabeAbfahrtsstation_KeyUp);
@@ -49,9 +50,9 @@
             // EingabeZielstation
             // 
             this.EingabeZielstation.FormattingEnabled = true;
-            this.EingabeZielstation.Location = new System.Drawing.Point(1172, 86);
+            this.EingabeZielstation.Location = new System.Drawing.Point(1162, 86);
             this.EingabeZielstation.Name = "EingabeZielstation";
-            this.EingabeZielstation.Size = new System.Drawing.Size(121, 33);
+            this.EingabeZielstation.Size = new System.Drawing.Size(140, 33);
             this.EingabeZielstation.TabIndex = 2;
             this.EingabeZielstation.SelectedIndexChanged += new System.EventHandler(this.EingabeZielstation_SelectedIndexChanged_1);
             this.EingabeZielstation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EingabeZielstation_KeyUp);
@@ -85,11 +86,22 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Ziel";
             // 
+            // ButtonAbfahrtsPlan
+            // 
+            this.ButtonAbfahrtsPlan.Location = new System.Drawing.Point(605, 86);
+            this.ButtonAbfahrtsPlan.Name = "ButtonAbfahrtsPlan";
+            this.ButtonAbfahrtsPlan.Size = new System.Drawing.Size(176, 51);
+            this.ButtonAbfahrtsPlan.TabIndex = 6;
+            this.ButtonAbfahrtsPlan.Text = "Abfahrsplan";
+            this.ButtonAbfahrtsPlan.UseVisualStyleBackColor = true;
+            this.ButtonAbfahrtsPlan.Click += new System.EventHandler(this.ButtonAbfahrtsPlan_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1816, 862);
+            this.Controls.Add(this.ButtonAbfahrtsPlan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RoutenAnzeige);
@@ -111,6 +123,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ButtonAbfahrtsPlan;
     }
 }
 
