@@ -40,7 +40,7 @@
             // EingabeAbfahrtsstation
             // 
             this.EingabeAbfahrtsstation.FormattingEnabled = true;
-            this.EingabeAbfahrtsstation.Location = new System.Drawing.Point(442, 86);
+            this.EingabeAbfahrtsstation.Location = new System.Drawing.Point(17, 40);
             this.EingabeAbfahrtsstation.Name = "EingabeAbfahrtsstation";
             this.EingabeAbfahrtsstation.Size = new System.Drawing.Size(140, 33);
             this.EingabeAbfahrtsstation.TabIndex = 1;
@@ -49,8 +49,9 @@
             // 
             // EingabeZielstation
             // 
+            this.EingabeZielstation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EingabeZielstation.FormattingEnabled = true;
-            this.EingabeZielstation.Location = new System.Drawing.Point(1162, 86);
+            this.EingabeZielstation.Location = new System.Drawing.Point(737, 40);
             this.EingabeZielstation.Name = "EingabeZielstation";
             this.EingabeZielstation.Size = new System.Drawing.Size(140, 33);
             this.EingabeZielstation.TabIndex = 2;
@@ -59,11 +60,14 @@
             // 
             // RoutenAnzeige
             // 
+            this.RoutenAnzeige.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RoutenAnzeige.FormattingEnabled = true;
             this.RoutenAnzeige.ItemHeight = 25;
-            this.RoutenAnzeige.Location = new System.Drawing.Point(437, 234);
+            this.RoutenAnzeige.Location = new System.Drawing.Point(12, 138);
             this.RoutenAnzeige.Name = "RoutenAnzeige";
-            this.RoutenAnzeige.Size = new System.Drawing.Size(856, 554);
+            this.RoutenAnzeige.Size = new System.Drawing.Size(856, 229);
             this.RoutenAnzeige.TabIndex = 3;
             this.RoutenAnzeige.SelectedIndexChanged += new System.EventHandler(this.RoutenAnzeige_SelectedIndexChanged);
             this.RoutenAnzeige.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RoutenAnzeige_KeyUp);
@@ -71,7 +75,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(437, 55);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 25);
             this.label1.TabIndex = 4;
@@ -79,8 +83,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1172, 55);
+            this.label2.Location = new System.Drawing.Point(747, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 25);
             this.label2.TabIndex = 5;
@@ -88,7 +93,7 @@
             // 
             // ButtonAbfahrtsPlan
             // 
-            this.ButtonAbfahrtsPlan.Location = new System.Drawing.Point(605, 86);
+            this.ButtonAbfahrtsPlan.Location = new System.Drawing.Point(180, 40);
             this.ButtonAbfahrtsPlan.Name = "ButtonAbfahrtsPlan";
             this.ButtonAbfahrtsPlan.Size = new System.Drawing.Size(176, 51);
             this.ButtonAbfahrtsPlan.TabIndex = 6;
@@ -100,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1816, 862);
+            this.ClientSize = new System.Drawing.Size(891, 399);
             this.Controls.Add(this.ButtonAbfahrtsPlan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

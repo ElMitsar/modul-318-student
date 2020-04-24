@@ -22,12 +22,10 @@ namespace FahrplanAPP
         private void EingabeAbfahrtsstation_KeyUp(object sender, KeyEventArgs e)
         {
             EingabeVollständigkeitsPrüfung(e);
+            Stations Abfahrtsstation = transport.GetStations(EingabeAbfahrtsstation.Text);
+            foreach (Station x in Abfahrtsstation.StationList)
             {
-                Stations Abfahrtsstation = transport.GetStations(EingabeAbfahrtsstation.Text);
-                foreach (Station x in Abfahrtsstation.StationList)
-                {
-                    EingabeAbfahrtsstation.Items.Add(x.Name);
-                }
+                EingabeAbfahrtsstation.Items.Add(x.Name);
             }
         }
 
@@ -39,12 +37,10 @@ namespace FahrplanAPP
         private void EingabeZielstation_KeyUp(object sender, KeyEventArgs e)
         {
             EingabeVollständigkeitsPrüfung(e);
+            Stations Zielstation = transport.GetStations(EingabeZielstation.Text);
+            foreach (Station x in Zielstation.StationList)
             {
-                Stations Zielstation = transport.GetStations(EingabeZielstation.Text);
-                foreach (Station x in Zielstation.StationList)
-                {
-                    EingabeZielstation.Items.Add(x.Name);
-                }
+                EingabeZielstation.Items.Add(x.Name);
             }
         }
 
@@ -94,23 +90,28 @@ namespace FahrplanAPP
 
         private void EingabeAbfahrtsstation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Stations Abfahrtsstation = transport.GetStations(EingabeAbfahrtsstation.Text);
         }
 
         private void EingabeZielstation_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            Stations Zielstation = transport.GetStations(EingabeZielstation.Text);
         }
 
         private void ButtonAbfahrtsPlan_Click(object sender, EventArgs e)
         {
             RoutenAnzeige.Items.Clear(); //Löscht vorgängige Eingaben
-            var AbfahrtsstationID = transport.GetStations(EingabeAbfahrtsstation.Text).StationList[0].Id;
-            StationBoardRoot Abfahrtsplan = transport.GetStationBoard(EingabeAbfahrtsstation.Text, AbfahrtsstationID);
-            foreach (StationBoard x in Abfahrtsplan.Entries)
+                var AbfahrtsstationID = transport.GetStations(EingabeAbfahrtsstation.Text).StationList[0].Id;  
+            try
             {
-                RoutenAnzeige.Items.Add(x.Stop.Departure + "\t" + x.To);
+                StationBoardRoot Abfahrtsplan = transport.GetStationBoard(EingabeAbfahrtsstation.Text, AbfahrtsstationID);
+                foreach (StationBoard x in Abfahrtsplan.Entries)
+                {
+                    RoutenAnzeige.Items.Add(x.Stop.Departure + "\t" + x.To);
+                }
+            } catch
+            {
+
             }
+
         }
     }
 }
